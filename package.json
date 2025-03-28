@@ -1,0 +1,17 @@
+{
+  "name": "telegram-bot-server-",
+  "version": "1.0.0",
+  "description": "Telegram bot server for Personal-todo-assistant",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./server.js",
+    "start:dev": "node ./docs/swagger.js && cross-env NODE_ENV=development nodemon ./server.js",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint --fix **/*.js",
+    "test": "jest"
+  },
+  "author": "Iryna Burlaka",
+  "license": "ISC"
+}
+
