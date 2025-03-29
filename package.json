@@ -12,6 +12,8 @@
     "test": "jest"
   },
   "author": "Iryna Burlaka",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^9.23.0"
+  }
 }
-
