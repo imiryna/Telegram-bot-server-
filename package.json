@@ -14,6 +14,7 @@
   "author": "Iryna Burlaka",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "eslint": "^9.23.0"
   }
 }
