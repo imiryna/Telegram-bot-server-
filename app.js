@@ -1,6 +1,5 @@
 import express from "express";
 import dotenv from "dotenv";
-import TelegramBot from "node-telegram-bot-api";
 
 dotenv.config({});
 
@@ -8,17 +7,11 @@ const app = express();
 
 console.log(process.env);
 
-//== Telegram bot =============
+app.post(`/bot${token}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
 
-const token = process.env.OT_API_TOKEN;
-
-const bot = new TelegramBot(token, { polling: true });
-
-bot.on("message", (msg) => {
-  const chatId = msg.chat.id;
-  const messageText = msg.text;
-
-  if (messageText === "/start") {
-    bot.sendMessage(chatId, "Welcome to the bot!");
-  }
-}); // Process the incoming message here
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
