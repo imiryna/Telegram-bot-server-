@@ -14,3 +14,15 @@ bot.on("message", (msg) => {
     bot.sendMessage(chatId, "Welcome to the bot!");
   }
 }); // Process the incoming message here
+
+bot.onText(/\/start/, (msg) => {
+  bot.sendMessage(msg.chat.id, "Привіт! Я твій Telegram-бот 🤖");
+});
+
+bot.onText(/\/help/, (msg) => {
+  bot.sendMessage(msg.chat.id, "Я можу виконувати такі команди:\n/start - Привітання\n/help - Список команд\n/info - Інформація про користувача");
+});
+
+bot.onText(/\/info/, (msg) => {
+  bot.sendMessage(msg.chat.id, `Твоє ім'я: ${msg.from.first_name}\nТвій ID: ${msg.from.id}`);
+});
