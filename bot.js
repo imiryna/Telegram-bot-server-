@@ -18,12 +18,13 @@ bot.on("message", (msg) => {
   }
 }); // Process the incoming message here
 
-bot.onText(/\/start/, (msg) => {
-  bot.sendMessage(msg.chat.id, "Привіт! Я твій Telegram-бот 🤖");
-});
+bot.on("message", (msg) => {
+  const chatId = msg.chat.id;
+  const messageText = msg.text;
 
-bot.onText(/\/help/, (msg) => {
-  bot.sendMessage(msg.chat.id, "Я можу виконувати такі команди:\n/start - Привітання\n/help - Список команд\n/info - Інформація про користувача");
+  if (messageText === "/help") {
+    bot.sendMessage(chatId, "Я можу виконувати такі команди:\n/start - Привітання\n/help - Список команд\n/info - Інформація про користувача");
+  }
 });
 
 bot.onText(/\/info/, (msg) => {
